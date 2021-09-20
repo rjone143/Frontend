@@ -28,7 +28,7 @@ h3{
   line-height: .75;
 }
 
-.navbar-brand a:hover, .navbar-brand a:focus {
+.navbar-brand a:hover, .navbar-brand a:focus,.navbar-brand a:link,.navbar-brand a:visited {
   text-decoration: none;
 }
 
