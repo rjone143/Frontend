@@ -9,8 +9,18 @@ p{
 h3{
       color: #8a7e00;
 }
-li{
-  color: black;
+
+
+.navbar-toggle {
+  align-content: right;
+}
+
+}
+#nav-list a {
+    color: #8a7e00 !important;
+    font-weight: bold;
+    margin-left: 400px;
+    float: right;
 }
 
 /*
@@ -21,6 +31,7 @@ li{
 .navbar-toggle .icon-bar {
     width: 22px;
     transition: all 0.7s;
+
 }
 
 .navbar-toggle .top-bar {
