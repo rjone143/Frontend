@@ -1,21 +1,50 @@
-*{
-	font-size: 26px;
-	color: #fff;
-	background-color: #61122f;
-}
-
 body{
-font-family: 'Oxygen', sans-serif;	
+  font-family: 'Oxygen', sans-serif;	
+  font-size: 26px;
+  color: #fff;
+  background-color: #61122f !important;
 }
 
-#header-nav {
+#header-nav, .container {
 	background-color: #f6b319;
 	border-radius: 0;
 	border: 0;
 }
+
 #logo-img {
-	background: url('*/logo.png')no-repeat;
-	width: 150px;
-	height: 150px;
-	margin: 10px 15px 10px 0;
+	background-image: url('http://localhost:3000/Module3/images/logo.jpeg');
+	width: 50px;
+	height: 50px;
+	margin: 10px 10px 10px 10px;
+	align-content: center;
 }	
+.novbar-brand h1{
+	font-family: 'Lora', serif;
+	color: #557c3e;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #222;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: .75;
+}
+.navbar-brand a:link, .navbar-brand a:visited{
+	text-decoration: none;
+	color: #557c3e;
+
+}
+
+.navvbar-brand p{
+	color: #000;
+	text-transform: uppercase;
+	font-size: .7em;
+	margin-top: 15px;
+}
+.navbar-brand p span{
+	vertical-align: middle;
+}
+#starlogo{
+	width: 10px;
+	height: 10px;
+}
