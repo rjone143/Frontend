@@ -9,6 +9,46 @@ p{
 h3{
       color: #8a7e00;
 }
+li{
+  color: black;
+}
+
+/*
+    Modified version of Animated hamburger source from:
+    http://julienmelissas.com/animated-x-icon-for-the-bootstrap-navbar-toggle/
+*/
+
+.navbar-toggle .icon-bar {
+    width: 22px;
+    transition: all 0.7s;
+}
+
+.navbar-toggle .top-bar {
+    transform: translateX(3px) rotate(135deg);
+    transform-origin: 40% 200%;
+}
+
+.navbar-toggle .mid-bar {
+    opacity: 0;
+}
+
+.navbar-toggle .bot-bar {
+    transform: translateX(3px) rotate(-135deg);
+    transform-origin: 40% -80%;
+}
+
+.navbar-toggle.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggle.collapsed .mid-bar {
+    opacity: 1;
+}
+
+.navbar-toggle.collapsed .bot-bar {
+    transform: rotate(0);
+}
+
 
 #header-nav {
   background-color: #e0d982;
