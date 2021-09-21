@@ -15,6 +15,7 @@ p{
     width: 100%;
     padding-left:10px;
     text-align: left;
+    height: 700px;
     
   }
 
@@ -26,7 +27,7 @@ h3{
 section {
     border: 1px solid black; 
     background-color: #ffe4c4;
-    height: 250px;
+    height: 700px;
     overflow: hidden;
     margin-bottom: 10px;
     /*&max-width: auto;*/
@@ -76,6 +77,8 @@ overflow-wrap:break-word;
 }
 #menu-tile.text-background{
   width: 100%;
+  height: 700px;
+  overflow: auto;
 }
 #nav-list a {
   color: #8a7e00;
@@ -213,9 +216,34 @@ overflow-wrap:break-word;
   .mod-adj{
   width: 100%;
 }
+#menu-tile.text-background{
+  width: 100%;
+  height: 400px ;
+  overflow: auto;
+}
+section {
+    border: 1px solid black;
+    background-color: #080700;
+    height: 400px !important;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
 
 .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
       float: left;}}
  @media (max-width: 767px) {
+  #menu-tile.text-background{
+  width: 100%;
+  height: 400px;
+  overflow: auto;
+}
+section {
+    border: 1px solid black;
+    background-color: #080700;
+    height: 400px !important;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
 .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
       float: left;}}
