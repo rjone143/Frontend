@@ -1,4 +1,7 @@
 
+*{
+  box-sizing: border-box;
+}
 
 body{
   font-size: 16px;
@@ -8,11 +11,11 @@ body{
 }
 p{
     color: #8a7e00;
-    clear: both;
+    /*clear: both;*/
     width: 100%;
     padding-left:10px;
     text-align: left;
-    clear: right;
+    
   }
 
 h3{
@@ -26,15 +29,16 @@ section {
     height: 250px;
     overflow: hidden;
     margin-bottom: 10px;
-}
+    /*&max-width: auto;*/
 
+}
 
  #main-content {
 overflow-wrap:break-word;
 }
+
 #menu-tile:hover{
   overflow:auto;
-  
 }
 }
 
@@ -58,7 +62,7 @@ overflow-wrap:break-word;
   height: 250px;
   width: 100%;
   margin-bottom: 15px;
-  position: relative;
+  /*position: relative;*/
   border: 2px solid #3F0C1F;
   
 }
@@ -94,7 +98,7 @@ overflow-wrap:break-word;
 }
 
 #menu-tile, #specials-tile {
-    width: auto;
+    /*width: auto;*/
     margin: 0 auto 15px;
   }
 
@@ -194,11 +198,22 @@ overflow-wrap:break-word;
   text-decoration: none;
 }
 
-
 @media (min-width: 992px) {
+  #collapsable-nav{
+    visibility: hidden;
+    max-height: 10px;
+  }
 .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
       float: left;}}
+
 @media (min-width: 768px) and (max-width: 991px) {
+  .navbar-toggle.collapsed{
+    visibility: hidden;
+  }
+  .mod-adj{
+  width: 100%;
+}
+
 .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
       float: left;}}
  @media (max-width: 767px) {
