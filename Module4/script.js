@@ -1,5 +1,5 @@
 
-(function (window){
+(function (){
   //body
 
 
@@ -39,7 +39,7 @@ WARNING!!! WARNING!!!
 
 var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
 
-
+//const map1 = names.map();
 
 // DONE- STEP 10:
 // Loop over the names array and say either 'Hello' or "Good Bye"
@@ -66,11 +66,52 @@ for (var a in names) {
   // name in the loop.
   /* fill in condition here */
   if (firstLetter == 'j') {
-    byeSpeaker.speak(names[a]);
+    window.byeSpeaker.speak(names[a]);
   } else {
-    helloSpeaker.speak(names[a]);
+    window.helloSpeaker.speak(names[a]);
   }
 }
 
-})(window);
+//addition 2 a
+function speakSimple(name){
+  var firstLetter= name[0].toLowerCase()
+  if(firstLetter =='j'){
+    return byeSpeaker.speakSimple(name)
+  }else{
+    return helloSpeaker.speakSimple(name)
+
+  }
+}
+
+var newArray = names.map(function(name){
+  return speakSimple(name)
+})
+
+for (var a in newArray){
+  console.log(newArray[a])
+}
+
+
+
+// imitialize 
+var newArrayObj = {hello:[], bye: []};
+
+var newOject = names.reduce(
+  function(one, two){
+    var firstLetter = two[0].toLowerCase()
+    if (firstLetter=='j'){
+      one.bye.push(byeSpeaker.speakSimple(two))
+    }else{
+      one.hello.push(helloSpeaker.speakSimple(two))
+    }
+    return one
+  }, newArrayObj
+  )
+for (var loc in newArrayObj){
+  for (var a in newArrayObj [loc]){
+    console.log(newArrayObj[loc][a])
+  }
+}
+
+})()
 
