@@ -22,7 +22,6 @@ var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
 var menuItemHtml = "snippets/menu-item.html";
-var aboutUsHtml = "snippets/about.html"
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
@@ -53,11 +52,6 @@ var switchMenuToActive = function () {
   classes = classes.replace(new RegExp("active", "g"), "");
   document.querySelector("#navHomeButton").className = classes;
 
-    // Remove 'active' from about button
-    var classes = document.querySelector("#navAboutButton").className;
-    classes = classes.replace(new RegExp("active", "g"), "");
-    document.querySelector("#navAboutButton").className = classes;
-
   // Add 'active' to menu button if not already there
   classes = document.querySelector("#navMenuButton").className;
   if (classes.indexOf("active") === -1) {
@@ -65,29 +59,6 @@ var switchMenuToActive = function () {
     document.querySelector("#navMenuButton").className = classes;
   }
 };
-
-
-// Remove the class 'active' from home and switch to Menu button
-var switchAboutToActive = function () {
-  // Remove 'active' from home button
-  var classes = document.querySelector("#navHomeButton").className;
-  classes = classes.replace(new RegExp("active", "g"), "");
-  document.querySelector("#navHomeButton").className = classes;
-
-  // Remove 'active' from menu button
-  var classes = document.querySelector("#navMenuButton").className;
-  classes = classes.replace(new RegExp("active", "g"), "");
-  document.querySelector("#navMenuButton").className = classes;
-
-  // Add 'active' to menu button if not already there
-  classes = document.querySelector("#navAboutButton").className;
-  if (classes.indexOf("active") === -1) {
-    classes += " active";
-    document.querySelector("#navAboutButton").className = classes;
-  }
-};
-
-
 
 // On page load (before images or CSS)
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -113,7 +84,7 @@ showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
   buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
-  true); // Explicitly setting the flag to get JSON from server processed into an object literal
+  true); // Explicitely setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
 
@@ -131,9 +102,7 @@ function buildAndShowHomeHTML (categories) {
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
-      console.log(categories)
-      var chosenCategoryShortName = chooseRandomCategory(categories)
-      console.log(chosenCategoryShortName)
+      var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
 
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
@@ -148,18 +117,15 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //
       // var homeHtmlToInsertIntoMainPage = ....
-      var short_name = "'" + chosenCategoryShortName.short_name + "'"
-      console.log(short_name)
-      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", short_name);
-      console.log(homeHtmlToInsertIntoMainPage)
+      chosenCategoryShortName = "'" + chosenCategoryShortName + "'";
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName);
+
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       // ....
-
-      insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
-      console.log('--')
+      insertHtml('#main-content', homeHtmlToInsertIntoMainPage);
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
@@ -194,45 +160,6 @@ dc.loadMenuItems = function (categoryShort) {
     buildAndShowMenuItemsHTML);
 };
 
-
-// Load the menu categories view
-dc.loadRating = function () {
-  showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
-    allCategoriesUrl,
-    buildAboutUs);
-};
-
-
-function buildAboutUs (){
-  
-
-  $ajaxUtils.sendGetRequest(
-    aboutUsHtml,
-    function (aboutUsHtml) {
-      star = '"fa fa-star"'
-      emptyStar = '"far fa-star"'
-      randNum = getRandomStarNumber()
-      console.log(randNum)
-      for (var i=1; i<=randNum; i++){
-        aboutUsHtml = insertProperty(aboutUsHtml, "class"+i.toString(), star);
-      }
-      for (var i=randNum; i<=5; i++){
-        aboutUsHtml = insertProperty(aboutUsHtml, "class"+i.toString(), emptyStar);
-      }
-
-      var aboutUsHtmlToInsertIntoMainPage = insertProperty(aboutUsHtml, "number", randNum.toString());
-      console.log(aboutUsHtmlToInsertIntoMainPage)
-      switchAboutToActive()
-
-      insertHtml("#main-content", aboutUsHtmlToInsertIntoMainPage);
-    },
-    false);
-}
-
-function getRandomStarNumber(){
-  return Math.ceil(Math.random() * Math.floor(5));
-}
 
 // Builds HTML for the categories page based on the data
 // from the server
