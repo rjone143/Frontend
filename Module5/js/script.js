@@ -1,5 +1,4 @@
-$(function () { 
-// Same as document.addEventListener("DOMContentLoaded"...
+$(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
   // Same as document.querySelector("#navbarToggle").addEventListener("blur",...
   $("#navbarToggle").blur(function (event) {
@@ -14,16 +13,16 @@ $(function () {
 
 var dc = {};
 
-var homeHtmlUrl = "*/Module5/snippets/home-snippet.html";
+var homeHtmlUrl = "snippets/home-snippet.html";
 var allCategoriesUrl =
   "https://davids-restaurant.herokuapp.com/categories.json";
-var categoriesTitleHtml = "*/Module5/snippets/categories-title-snippet.html";
-var categoryHtml = "*/Module5/snippets/category-snippet.html";
+var categoriesTitleHtml = "Module5/snippets/categories-title-snippet.html";
+var categoryHtml = "Module5/snippets/category-snippet.html";
 var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
-var menuItemsTitleHtml = "*/Module5/snippets/menu-items-title.html";
-var menuItemHtml = "*/Module5/snippets/menu-item.html";
-var aboutUsHtml = "*/Module5/snippets/about.html"
+var menuItemsTitleHtml = "Module5/snippets/menu-items-title.html";
+var menuItemHtml = "Module5/snippets/menu-item.html";
+var aboutUsHtml = "Module5/snippets/about.html"
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
@@ -132,8 +131,8 @@ function buildAndShowHomeHTML (categories) {
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
-      console.log(categories)
-      var chosenCategoryShortName = chooseRandomCategory(categories)
+      //console.log(categories)
+      var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
       console.log(chosenCategoryShortName)
 
 
@@ -149,10 +148,12 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //
       // var homeHtmlToInsertIntoMainPage = ....
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", "'" + chosenCategoryShortName + "'");
+
       var short_name = "'" + chosenCategoryShortName.short_name + "'"
       console.log(short_name)
-      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", short_name);
-      console.log(homeHtmlToInsertIntoMainPage)
+
+      //console.log(homeHtmlToInsertIntoMainPage)
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
@@ -160,7 +161,7 @@ function buildAndShowHomeHTML (categories) {
       // ....
 
       insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
-      console.log('--')
+      //console.log('--')
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
