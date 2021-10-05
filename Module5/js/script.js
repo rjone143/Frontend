@@ -1,4 +1,5 @@
-$(function () { // Same as document.addEventListener("DOMContentLoaded"...
+$(function () { 
+// Same as document.addEventListener("DOMContentLoaded"...
 
   // Same as document.querySelector("#navbarToggle").addEventListener("blur",...
   $("#navbarToggle").blur(function (event) {
@@ -17,7 +18,7 @@ var homeHtmlUrl = "Module5/snippets/home-snippet.html";
 var allCategoriesUrl =
   "https://davids-restaurant.herokuapp.com/categories.json";
 var categoriesTitleHtml = "Module5/snippets/categories-title-snippet.html";
-var categoryHtml = "sModule5/nippets/category-snippet.html";
+var categoryHtml = "Module5/nippets/category-snippet.html";
 var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 var menuItemsTitleHtml = "Module5/snippets/menu-items-title.html";
