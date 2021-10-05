@@ -132,11 +132,11 @@ body {
   box-shadow: 0 1px 5px 1px #cccccc;
 }
 #menu-tile {
-  background: url('Module5/images/menu-tile.jpg') no-repeat;
+  background: url('../images/menu-tile.jpg') no-repeat;
   background-position: center;
 }
 #specials-tile {
-  background: url('Module5/images/specials-tile.jpg') no-repeat;
+  background: url('../images/specials-tile.jpg') no-repeat;
   background-position: center;
 }
 #menu-tile span, #specials-tile span, #map-tile span {
@@ -370,4 +370,8 @@ h3.menu-item-title {
     width: 100%;
   }
 }
+
+
+
+
 
