@@ -14,16 +14,16 @@ $(function () {
 
 var dc = {};
 
-var homeHtmlUrl = "Module5/snippets/home-snippet.html";
+var homeHtmlUrl = "*/Module5/snippets/home-snippet.html";
 var allCategoriesUrl =
   "https://davids-restaurant.herokuapp.com/categories.json";
-var categoriesTitleHtml = "Module5/snippets/categories-title-snippet.html";
-var categoryHtml = "Module5/nippets/category-snippet.html";
+var categoriesTitleHtml = "*/Module5/snippets/categories-title-snippet.html";
+var categoryHtml = "*/Module5/snippets/category-snippet.html";
 var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
-var menuItemsTitleHtml = "Module5/snippets/menu-items-title.html";
-var menuItemHtml = "Module5/snippets/menu-item.html";
-var aboutUsHtml = "Module5/snippets/about.html"
+var menuItemsTitleHtml = "*/Module5/snippets/menu-items-title.html";
+var menuItemHtml = "*/Module5/snippets/menu-item.html";
+var aboutUsHtml = "*/Module5/snippets/about.html"
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
