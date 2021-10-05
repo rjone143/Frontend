@@ -31,11 +31,7 @@ ajaxUtils.sendGetRequest =
                        isJsonResponse); 
       };
     request.open("GET", requestUrl, true);
-<<<<<<< HEAD
-    //request.send(null); // for POST only
-=======
     request.send(null); // for POST only
->>>>>>> parent of d89a1ae (guessing)
   };
 
 
@@ -68,4 +64,3 @@ global.$ajaxUtils = ajaxUtils;
 
 
 })(window);
-
