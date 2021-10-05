@@ -197,7 +197,7 @@ dc.loadMenuItems = function (categoryShort) {
 };
 
 
-// Load the menu categories view
+// Load the about page
 dc.loadRating = function () {
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
@@ -212,6 +212,7 @@ function buildAboutUs (){
   $ajaxUtils.sendGetRequest(
     aboutUsHtml,
     function (aboutUsHtml) {
+      //creates a star 
       star = '"fa fa-star"'
       emptyStar = '"far fa-star"'
       randNum = getRandomStarNumber()
