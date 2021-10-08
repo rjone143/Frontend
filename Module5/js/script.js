@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // so it can be called when server responds with the categories data.
 
 // *** start ***
-// On first load, show home view
+// home view difficulty loading images
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
@@ -176,7 +176,7 @@ function chooseRandomCategory (categories) {
 }
 
 
-// Load the menu categories view
+// Load the menu categories view works fine
 dc.loadMenuCategories = function () {
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
@@ -195,7 +195,7 @@ dc.loadMenuItems = function (categoryShort) {
 };
 
 
-// Load the menu categories view
+// Load the menu categories view works fine
 dc.loadRating = function () {
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
@@ -205,7 +205,7 @@ dc.loadRating = function () {
 
 
 function buildAboutUs (){
-  
+
 
   $ajaxUtils.sendGetRequest(
     aboutUsHtml,
@@ -229,6 +229,7 @@ function buildAboutUs (){
     },
     false);
 }
+//from assignment adds
 
 function getRandomStarNumber(){
   return Math.ceil(Math.random() * Math.floor(5));
