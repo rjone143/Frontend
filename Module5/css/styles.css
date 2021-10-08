@@ -131,7 +131,6 @@ body {
 #menu-tile:hover, #specials-tile:hover, #map-tile:hover {
   box-shadow: 0 1px 5px 1px #cccccc;
 }
-/*  having torouble loading my two images here...*/
 #menu-tile {
   background: url('images/menu-tile.jpg') no-repeat;
   background-position: center;
@@ -155,7 +154,7 @@ body {
 /* END HOME PAGE */
 
 /* MENU CATEGORIES PAGE */
-.category-tile {
+.category-tile { 
   position: relative;
   border: 2px solid #3F0C1F;
   overflow: hidden;
@@ -202,7 +201,7 @@ body {
 }
 .menu-item-photo {
   position: relative;
-  border: 2px solid #3F0C1F;
+  border: 2px solid #3F0C1F; 
   overflow: hidden;
   padding: 0;
   margin-right: -15px;
@@ -355,7 +354,7 @@ h3.menu-item-title {
     font-size: 6vw;
   }
   /* End Header */
-
+  
   /* Home page */
   #menu-tile, #specials-tile {
     width: 280px;
@@ -371,3 +370,8 @@ h3.menu-item-title {
     width: 100%;
   }
 }
+
+
+
+
+
