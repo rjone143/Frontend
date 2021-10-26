@@ -25,7 +25,7 @@
         var boughtList = this;
         boughtList.purchases = ShoppingListCheckOffService.getBoughtItems()
         boughtList.displayTotalPrice = function (quantity, price) { 
-            var msg = 'for total price of $' + quantity * price
+            var msg = 'for a total price of $' + quantity * price
             return msg
         }
         
