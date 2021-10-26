@@ -53,7 +53,7 @@
      <h2>Already Bought:</h2>
      <ul>
       <!--add a repeat  -->
-      <li ng-repeat="item in boughtList.purchases">Bought {{item.quantity}} {{item.name}}(s) {{ boughtList.displayTotalPrice(item.quantity,item.pricePerItem) | dollarSign : '$' : '$$$$$'}}</li>
+      <li ng-repeat="item in boughtList.purchases">Bought {{item.quantity}} {{item.name}}(s) {{ boughtList.displayTotalPrice(item.quantity,item.pricePerItem) | dollarSign : '$' : '$'}}</li>
      </ul>
       <!-- hidden message-->
      <div class="emptyMessage" ng-if="boughtList.purchases.length === 0">Nothing bought yet.</div>
