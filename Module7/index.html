@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" ng-app="ShoppingListCheckOff">
+<!--added application -->
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+    </style>
+  </head>
+<body>
+  <div class="container" >
+  <h1>Shopping List Check Off</h1>
+
+  <div class="row">
+
+    <!-- To Buy List add a Controller 1 -->
+    <div class="col-md-6" ng-controller='ToBuyController as toBuyList'>
+     <h2>To Buy:</h2>
+     <ul>
+       <!-- add a repeat -->
+      <li ng-repeat="item in toBuyList.neededItems">Buy {{item.quantity}} {{item.name}}(s), Price Per Item: ${{item.pricePerItem}}
+         <!-- model and size-->
+        <input ng-model='item.quantity' size="10"> </input>
+        <!--action listner -->
+        <button class="btn btn-default" ng-click="toBuyList.buyItem($index);">
+          <span class="glyphicon glyphicon-ok"></span> Bought</button>
+      </li>
+    </ul>
+     <!-- hidden message -->
+     <div class="emptyMessage" ng-if="toBuyList.neededItems.length === 0">Everything is bought!</div>
+    </div>
+
+    <!-- Already Bought List Controller 2 -->
+    <div class="col-md-6" ng-controller='AlreadyBoughtController as boughtList'>
+     <h2>Already Bought:</h2>
+     <ul>
+      <!--add a repeat  -->
+      <li ng-repeat="item in boughtList.purchases">Bought {{item.quantity}} {{item.name}}(s) {{ boughtList.displayTotalPrice(item.quantity,item.pricePerItem) | dollarSign : '$' : '$$$$$'}}</li>
+     </ul>
+      <!-- hidden message-->
+     <div class="emptyMessage" ng-if="boughtList.purchases.length === 0">Nothing bought yet.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
