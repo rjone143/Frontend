@@ -1,0 +1,25 @@
+ <table class="table table-striped">
+        <thead>
+            <th>Name</th>
+            <th>Short-Name</th>
+            <th>Description</th>
+            <th></th>
+          </thead>
+        <tr ng-repeat="item in items.foundItemsProp">
+            <td>
+                {{ item.name }}
+            </td>
+            <td>
+                {{ item.short_name }}
+            </td>
+            <td>
+                {{ item.description }}
+            </td>
+            <td>
+                <button ng-click="items.onRemove({index: $index});">Don't want this one!</button>
+            </td>
+        </tr>
+    </table>
+
+
+    <div class="alert alert-danger" ng-if="items.checkNothingFound()">Nothing found</div>
