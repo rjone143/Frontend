@@ -10,7 +10,7 @@ function myDirective(MenuService) {
     return {
         require: 'ngModel',
         link: function(scope, element, attr, mCtrl) {
-            console.log('aaaa')
+            console.log('success')
             function myValidation(value) {
                 console.log(value)
                 console.log(MenuService)
