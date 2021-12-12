@@ -60,9 +60,9 @@
         <br>
 </div>
 <div class="form-group">
-        <input name="dish" class="form-control" placeholder="favorite dish"
+        <input name="dish" class="form-control" style=" text-transform: uppercase;" placeholder="favorite dish"
         ng-model="reg.user.dish"
-        required my-directive>
+        required my-directive >
 
         <span
           ng-if="(regForm.dish.$invalid || regForm.dish.$error.required) && regForm.dish.$touched">
