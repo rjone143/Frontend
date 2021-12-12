@@ -1,6 +1,6 @@
 <fieldset>
     <legend>Registration</legend>
-    <form name='regForm' novalidate>
+    <form name='regForm' ngNativeValidate>
 
       <input type="text" name="firstname" placeholder="First Name"
         ng-model="reg.user.firstname"
@@ -12,6 +12,7 @@
           ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
           firstname must be at least 2 characters long
         </span>
+
         <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
           firstname must not be longer than 10 characters
         </span>
@@ -68,6 +69,7 @@
         </div>
     </form>
   </fieldset>
+  
 
   <div id="info" ng-if="reg.completed">
     Your information has been saved
