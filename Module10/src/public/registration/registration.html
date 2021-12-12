@@ -1,7 +1,14 @@
+<h1 class="text-center ng-scope">Signup for our newstler that will never come!</h1>
+<div class="row">
+    <div class="col-xs-1 col-sm-2 col-md-3"></div>
+
+   <div class="col-xs-10 col-sm-8 col-md-6">
+
+
 <fieldset>
     <legend>Registration</legend>
-    <form name='regForm' ngNativeValidate>
-
+    <form name='regForm' class="form-vertical" novalidate>
+<div class="form-group">
       <input type="text" name="firstname" placeholder="First Name"
         ng-model="reg.user.firstname"
         required
@@ -17,7 +24,8 @@
           firstname must not be longer than 10 characters
         </span>
         <br>
-
+</div>
+<div class="form-group">
         <input type="text" name="lastname" placeholder="Last Name"
         ng-model="reg.user.lastname"
         required
@@ -32,7 +40,8 @@
           lastname must not be longer than 10 characters
         </span>
         <br>
-
+</div>
+<div class="form-group">
       <input type="email" name="email" placeholder="Email"
         ng-model="reg.user.email"
         required>
@@ -40,7 +49,8 @@
           Must be a valid email address: handle@domain format
         </span>
         <br>
-
+</div>
+<div class="form-group">
       <input type="text" name="phone" placeholder="Phone ###-###-####"
         ng-model="reg.user.phone"
         pattern="(\d{3})-(\d{3})-(\d{4})">
@@ -48,7 +58,8 @@
           Phone must be in the format ###-###-####.
         </span>
         <br>
-
+</div>
+<div class="form-group">
         <input name="dish" placeholder="favorite dish"
         ng-model="reg.user.dish"
         required my-directive>
@@ -59,6 +70,7 @@
         </span>
 
         <br>
+</div>
 
       <button
         ng-disabled="regForm.$invalid"
@@ -69,8 +81,12 @@
         </div>
     </form>
   </fieldset>
-  
+
+</div>
+
+</div>
 
   <div id="info" ng-if="reg.completed">
     Your information has been saved
   </div>
+
