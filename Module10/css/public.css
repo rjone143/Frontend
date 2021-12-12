@@ -141,6 +141,9 @@ h3.menu-item-title {
   font-size: .9em;
   font-style: italic;
 }
+legend{
+  color: white;
+}
 /* END SINGLE CATEGORY PAGE */
 
 
