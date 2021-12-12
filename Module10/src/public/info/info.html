@@ -1,0 +1,16 @@
+<div class="userinfo"> 
+
+<div ng-if="info.registered == true">
+    <h3> First Name: {{ info.userInfo.firstname }}</h3>
+    <h3> Last Name: {{ info.userInfo.lastname }}</h3>
+    <h3> Phone Number: {{ info.userInfo.phone }}</h3>
+    <h3> Email: {{ info.userInfo.email }}</h3>
+    <h3> favorite dish: {{ info.userInfo.dish }}</h3>
+    <img class="img-responsive" width="250" height="150" ng-src="{{info.basePath}}/images/{{info.userInfo.dish}}.jpg" alt="{{info.userInfo.dish}}">
+</div>
+
+<div ng-if="info.registered == false">
+    <h3> Not Signed Up Yet. Sign up Now! </h3>
+</div>
+
+</div>
